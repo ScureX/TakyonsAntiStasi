@@ -1,0 +1,22 @@
+TKY_HeadQuartersManager {
+ ID "626AC7224C0EC766"
+ coords 0.174 3.297 6.178
+ {
+  GenericEntity : "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et" {
+   ID "626AC7230AB878AD"
+   coords 0 0 0
+  }
+  SCR_ChimeraCharacter : "{2DB452B3EC386B92}Prefabs/Characters/Factions/OPFOR/USSR_Army/Spetsnaz/Character_USSR_SF.et" {
+   ID "626AC72302C65600"
+   coords 1.512 0.61 0.821
+  }
+  GenericEntity : "{C3E6D45A8556A4A1}Prefabs/Systems/Arsenal/ArsenalBoxes/AntiStasiArsenal.et" {
+   ID "626AC7224C0E4FD7"
+   coords -0.618 -0.222 -0.822
+  }
+  SCR_ChimeraCharacter : "{EF06CA22FE2F768A}Prefabs/Characters/Factions/CIV/Businessman/Character_Commander.et" {
+   ID "626AC7224C0EC76C"
+   coords 0.728 0.152 -0.37
+  }
+ }
+}

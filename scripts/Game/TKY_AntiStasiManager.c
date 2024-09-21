@@ -16,7 +16,9 @@ class TKY_AntiStasiManagerComponentClass : ScriptComponentClass
 class TKY_AntiStasiManagerComponent: ScriptComponent
 {
 	ref TKY_LocationHandler locationHandler;
-	bool firstRun = true;
+	static const TKY_AntiStasiFactionEnum playerFaction = TKY_AntiStasiFactionEnum.INDFOR;
+	static const TKY_AntiStasiFactionEnum enemyFaction = TKY_AntiStasiFactionEnum.RHS_USAF;
+	private bool firstRun = true;
 	
 	protected override void OnPostInit(IEntity owner)
 	{

@@ -1,88 +1,7 @@
-class Location
-{
-	IEntity iEntity;
-	Faction faction;
-	ref array<SCR_AIGroup> defendingForce = {};
-	ref array<SCR_AIGroup> qrfForce = {};
-	
-	const int PLAYER_MIN_DISTANCE_TO_SPAWN = 1000;
-	bool isPlayerInSpawnDistance = false;
-	const int LOCATION_RADIUS = 250; // radius thats actually the location (spawn enemies, capture) // TODO scale with obj size 
-	
-	void Location(IEntity entity)
-	{
-		this.iEntity = entity;
-	}
-	
-	void RunChecks()
-	{
-		CheckPlayerNear();
-		SpawnDefenseForce();
-	}
-	
-	// check if a player is near enough to warrant spawning enemies
-	protected void CheckPlayerNear()
-	{
-		private ref array<IEntity> nearbyCharacters = new array<IEntity>();
-		private array<int> players = new array<int>(); 
-		GetGame().GetPlayerManager().GetPlayers(players);
-		
-		foreach (int playerid : players)
-		{
-			IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerid);
-			
-			if (!player)
-				continue;
-
-			if (vector.DistanceSqXZ(player.GetOrigin(), iEntity.GetOrigin()) <= (PLAYER_MIN_DISTANCE_TO_SPAWN * PLAYER_MIN_DISTANCE_TO_SPAWN))
-			{
-				Print("Player near " + iEntity.GetName());
-				isPlayerInSpawnDistance = true;
-				return; // one is enough
-			}
-		}
-		
-		// ran thru w/out returning
-		isPlayerInSpawnDistance = false;
-		
-		// nobody near, clear defenders
-		if (defendingForce.Count() > 0)
-		{
-			foreach (SCR_AIGroup defender : defendingForce)
-			{
-				delete defender;
-			}
-			defendingForce.Clear();
-		}
-	}
-	
-	protected void SpawnDefenseForce()
-	{
-		if (!isPlayerInSpawnDistance)
-			return;
-		
-		if (defendingForce.Count() > 0)
-			return;
-		
-		// if faction is player faction? mayb as long as you cant spawn ur own force there
-		
-		TKY_Spawner spawner = TKY_Spawner();
-		SCR_AIGroup defender = spawner.SpawnPrefabWithinRadius("{0ACD74AD27EEEE7D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_FireGroup.et", iEntity.GetOrigin(), LOCATION_RADIUS);
-		
-		if (defender)
-			defendingForce.Insert(defender);
-	}
-	
-	
-	
-	
-}
-
-
 class TKY_LocationHandler
 {
-	ref array<ref Location> locations = {};
-	const int HELP = 60;
+	ref array<ref TKY_Location> locations = {};
+	const int UPDATE_LIMITER = 60;
 	
 	
 	void TKY_LocationHandler()
@@ -93,10 +12,10 @@ class TKY_LocationHandler
 	private int runCounter = 0;
 	void Run()
 	{
-		if (runCounter % HELP == 0)
+		if (runCounter % UPDATE_LIMITER == 0)
 		{
 			Print("LocCheck run");
-			foreach (Location loc : locations)
+			foreach (TKY_Location loc : locations)
 			{
 				loc.RunChecks();
 			}
@@ -119,7 +38,7 @@ class TKY_LocationHandler
 		
 		Print("tky: done");
 		
-		foreach (Location loc : locations)
+		foreach (TKY_Location loc : locations)
 		{
 			Print(loc.iEntity.GetName());
 		}
@@ -129,7 +48,8 @@ class TKY_LocationHandler
 	{
 		MapDescriptorComponent mapdesc = MapDescriptorComponent.Cast(entity.FindComponent(MapDescriptorComponent));
 		if (mapdesc){
-			locations.Insert(new Location(entity));
+			TKY_Location loc = new TKY_Location(entity, TKY_AntiStasiManagerComponent.enemyFaction);
+			locations.Insert(loc);
 		}
 		return true;
 	}

@@ -1,0 +1,76 @@
+GenericEntity {
+ ID "62692B693AA58E03"
+ components {
+  BaseUniversalInventoryStorageComponent "{62692B6910D39B08}" {
+   Attributes SCR_ItemAttributeCollection "{62692B695A83C434}" {
+    ItemDisplayName SCR_InventoryUIInfo "{62692B68F7B2B766}" {
+     Name "Arsenal"
+     Description "desc"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{62692B68FD67F264}" {
+     Weight 5
+     DimensionScaler 0.9
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{62692B68C8A6A59C}" {
+     }
+    }
+    m_Size SLOT_2x2
+    m_SlotType SLOT_LOADOUT_STORAGE
+    m_bDraggable 0
+   }
+   Priority 1000
+  }
+  MeshObject "{62692B693AA58E0A}" {
+   Object "{B5E59CF43800658B}Assets/Props/Military/AmmoBox/ArsenalBox_01/ArsenalBox_01_USSR_weapons_ammo.xob"
+   PixelSizeScale 3
+  }
+  RigidBody "{62692B6A34DADE9D}" {
+   Mass 10
+   AngularSleepingThreashold 1
+   ModelGeometry 1
+   Static 1
+  }
+  ActionsManagerComponent "{62692B68BF1B5585}" {
+   ActionContexts {
+    UserActionContext "{62692B6A5D18F912}" {
+     ContextName "default"
+     Position PointInfo "{56F2C6D1431ADB9D}" {
+      Offset 0 0.464 0
+     }
+     Radius 1.5
+     Height 0
+    }
+   }
+   additionalActions {
+    SCR_OpenStorageAction "{62692B688220EF77}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{58EE8EA3E5E7D64D}" {
+      Name "#AR-Inventory_OpenArsenalStorage"
+     }
+    }
+   }
+  }
+  RplComponent "{62692B6B07CAE863}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{62692B693AA58E3F}" {
+  }
+ }
+ coords 0.182 0 -0.47
+ Flags 1027
+ {
+  GenericEntity : "{B6A3E477337B2530}Prefabs/Compositions/Misc/SubCompositions/EquipmentBoxStacked_Cluttered_USSR_04.et" {
+   ID "62692B686E880546"
+   components {
+    SCR_SlotCompositionComponent "{570283C37DBE4F55}" {
+     Enabled 0
+    }
+   }
+   coords 0 0 -0.86
+   angleY 0
+  }
+ }
+}

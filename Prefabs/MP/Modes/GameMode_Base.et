@@ -1,7 +1,8 @@
 SCR_BaseGameMode {
  ID "56B2B479C6B96951"
  components {
-  TKY_AntiStasiManagerComponent "{62691B527B3E88B4}" {
+  TKY_AntiStasiManagerComponent "{626CE09FBE33C7D5}" {
   }
  }
+ m_bAllowFactionChange 0
 }

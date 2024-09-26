@@ -8,19 +8,18 @@ class TKY_LocationHandler
 	{
 		GetAllEntitiesWithMapDescriptor();
 	}
+
 	
-	private int runCounter = 0;
 	void Run()
 	{
-		if (runCounter % UPDATE_LIMITER == 0)
+		foreach (TKY_Location loc : locations)
 		{
-			Print("LocCheck run");
-			foreach (TKY_Location loc : locations)
-			{
-				loc.RunChecks();
-			}
+			GetGame().GetCallqueue().CallLater(
+			loc.RunChecks,
+				1000,
+				true
+			);
 		}
-		runCounter++;
 	}
 	
 	// Method to retrieve all entities that have the SCR_MapDescriptorComponent
@@ -32,15 +31,14 @@ class TKY_LocationHandler
             Print("World context not found.");
         }
         
-        //world.GetActiveEntities(allEntities);
-		Print("tky: searching");
 		GetGame().GetWorld().QueryEntitiesBySphere("0 0 0", 99999999, CheckCityTownAddPopulation, FilterCityTownEntities, EQueryEntitiesFlags.STATIC);
 		
-		Print("tky: done");
-		
+		/*TKY_Location l = locations[0];
+		locations.Clear();
+		locations.Insert(l);*/
 		foreach (TKY_Location loc : locations)
 		{
-			Print(loc.iEntity.GetName());
+			Print(loc.locationEntity.GetName());
 		}
     } 
 	

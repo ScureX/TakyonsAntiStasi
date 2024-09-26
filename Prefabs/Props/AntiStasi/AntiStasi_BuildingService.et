@@ -1,0 +1,48 @@
+GenericEntity : "{99F250B2D720BA90}Prefabs/Props/Military/Compositions/BuildingService_base.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Object "{41884513B4CDA708}Assets/Props/Military/InteractionPoints/BuildingService/BuildingService_Table_FIA_01.xob"
+  }
+  SCR_CampaignBuildingProviderComponent "{5EBCED04D0321687}" {
+   m_bRegisterAtBase 0
+   m_aBudgetsToEvaluate {
+    SCR_CampaignBuildingBudgetToEvaluateData "{626D2A5FF9230CD3}" {
+     m_eBudget PROPS
+    }
+   }
+   m_aAvailableTraits {
+    696969001
+   }
+  }
+  SCR_DestructionMultiPhaseComponent "{5E4E589AB8C9F39F}" {
+   m_DestroySpawnObjects {
+    SCR_DebrisSpawnable "{5E4E589A84D1BB04}" {
+     m_ModelPrefabs {
+      "{5383D8A2E0BF50C2}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_20.xob" "{8E69DEF1A64D59C9}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_01.xob" "{17776768BBAA6859}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_02.xob" "{607D0FE04F088729}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_03.xob" "{67BAF5B1298E3DEA}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_04.xob" "{7F936E83CEEF8294}Assets/Props/Military/Furniture/USSR/Dst/TableMilitary_USSR_01_dst_00.xob" "{0899060B3A4D6DE4}Assets/Props/Military/Furniture/USSR/Dst/TableMilitary_USSR_01_dst_01.xob" "{E37F20F0B677002D}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_12.xob" "{9475487842D5EF5D}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_13.xob" "{93B2B2292453559E}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_14.xob" "{E4B8DAA1D0F1BAEE}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_15.xob" "{7DA66338CD168B7E}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_16.xob" "{0AAC0BB039B4640E}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_17.xob" "{7229979A001BFEF8}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_18.xob" "{0523FF12F4B91188}Assets/Props/Military/InteractionPoints/BuildingService/Dst/BuildingService_Table_US_01_dst_01_dbr_19.xob"
+     }
+    }
+    SCR_DebrisSpawnable "{5E4E5898E9A41B42}" : "{1EE9F8F556A0DDE9}Configs/Destruction/MultiphaseDestruction/FX_Debris/FX_Debris_Metal_Pole.conf" {
+     m_ModelPrefabs {
+      "{E68DD71AD308B304}Assets/Props/Military/Furniture/USSR/Dst/TableMilitary_USSR_01_dst_03.xob" "{9187BF9227AA5C74}Assets/Props/Military/Furniture/USSR/Dst/TableMilitary_USSR_01_dst_02.xob"
+     }
+    }
+   }
+  }
+  SCR_FactionAffiliationComponent "{5CB66A0F780C9329}" {
+   "faction affiliation" "ANTISTASI_PLAYER"
+  }
+  SCR_ResourceComponent "{5D7CC617AC1077DD}" {
+   m_aConsumers {
+    SCR_ResourceConsumer "{5DB899349B5974BC}" {
+     m_fResourceRange 0
+    }
+   }
+   m_aGenerators {
+    SCR_ResourceGenerator "{5DB89934EDCC4560}" {
+     m_fStorageRange 0
+    }
+   }
+  }
+ }
+}

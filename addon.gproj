@@ -1,22 +1,8 @@
 GameProject {
  ID "TakyonsAntiStasi"
- GUID "6268CE258DF7A0F8"
+ GUID "626B70338E51C9F5"
  TITLE "TakyonsAntiStasi"
  Dependencies {
-  "595F2BF2F44836FB" "5994AD5A9F33BE57" "58D0FB3206B6F859" "606B100247F5C709"
- }
- Configurations {
-  GameProjectConfig PC {
-  }
-  GameProjectConfig XBOX_ONE {
-  }
-  GameProjectConfig XBOX_SERIES {
-  }
-  GameProjectConfig PS4 {
-  }
-  GameProjectConfig PS5 {
-  }
-  GameProjectConfig HEADLESS {
-  }
+  "606B100247F5C709" "595F2BF2F44836FB" "5994AD5A9F33BE57" "58D0FB3206B6F859"
  }
 }

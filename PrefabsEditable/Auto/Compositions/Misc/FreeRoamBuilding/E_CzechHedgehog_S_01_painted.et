@@ -1,0 +1,53 @@
+GenericEntity : "{F3DE8994BAE6915A}Prefabs/Compositions/Misc/FreeRoamBuilding/CzechHedgehogPainted_S_01.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  SCR_EditableEntityComponent "{5E5072792A7E3394}" : "{8B8F72167C615EAA}Prefabs/Editor/Components/Compositions_SCR_EditableEntityComponent.ct" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-EditableEntity_CzechHedgehog_01_painted_Name"
+    m_Image "{F2548460DAD2CCBF}UI/Textures/EditorPreviews/Auto/Compositions/Misc/FreeRoamBuilding/E_CzechHedgehog_S_01_painted.edds"
+    m_sFaction "ANTISTASI_PLAYER"
+    m_aAuthoredLabels {
+     108 696969001
+    }
+    m_aAutoLabels {
+     1 121
+    }
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{626EC1D9D019A85C}" {
+      m_BudgetType CAMPAIGN
+     }
+    }
+    m_EntityChildrenBudgetCost {
+     SCR_EntityBudgetValue "{626EC1D9D019A8AF}" {
+      m_BudgetType PROPS
+      m_Value 1
+     }
+    }
+   }
+  }
+  SCR_EditorLinkComponent "{626EC1D9D019A8B7}" {
+   m_aEntries {
+    SCR_EditorLinkEntry "{626EC1D9D019A8B4}" {
+     m_Prefab "{571E92E7B51831C9}PrefabsEditable/Auto/Props/Military/Fortification/E_CzechHedgehog_01_painted.et"
+     m_vPosition -0.064 0 0.038
+     m_vAngles 0 0 0
+     m_fScale 1
+    }
+   }
+  }
+  ActionsManagerComponent "{5D66ED1096104FD8}" {
+   additionalActions {
+    SCR_CampaignBuildingDisassemblyUserAction "{5D66ED1086234C38}" {
+     Duration 20
+    }
+   }
+  }
+ }
+ coords 1635.657 39.01 2817.896
+ {
+  StaticModelEntity {
+   ID "5D6C81577507452B"
+   Flags 1048576
+  }
+ }
+}

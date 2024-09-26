@@ -1,0 +1,10 @@
+SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutManager_Base.et" {
+ ID "56B2B47708C4F23A"
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{626EC1FA1EDA64D3}" {
+   m_sLoadoutName "AntiStasiPlayer"
+   m_sLoadoutResource "{A52BA3A8957FB188}Prefabs/Characters/Factions/INDFOR/FIA/Character_ANTISTASI_Player.et"
+   m_sAffiliatedFaction "ANTISTASI_PLAYER"
+  }
+ }
+}

@@ -15,9 +15,10 @@ class TKY_AntiStasiManagerComponentClass : ScriptComponentClass
 
 class TKY_AntiStasiManagerComponent: ScriptComponent
 {
-	ref TKY_LocationHandler locationHandler;
-	static const TKY_AntiStasiFactionEnum playerFaction = TKY_AntiStasiFactionEnum.INDFOR;
-	static const TKY_AntiStasiFactionEnum enemyFaction = TKY_AntiStasiFactionEnum.RHS_USAF;
+	static ref TKY_LocationHandler locationHandler;
+	static ref TKY_Faction playerFaction;
+	static ref TKY_Faction enemyFaction;
+	
 	private bool firstRun = true;
 	
 	protected override void OnPostInit(IEntity owner)
@@ -31,9 +32,24 @@ class TKY_AntiStasiManagerComponent: ScriptComponent
 		super.EOnFrame(owner, timeSlice);
 		if (firstRun)
 		{
+			playerFaction = new TKY_Faction(
+				TKY_FactionEnum.INDFOR,
+				Color.Green,
+				{},
+				{},
+				false
+			);
+			enemyFaction = new TKY_Faction(
+				TKY_FactionEnum.RHS_AFRF,
+				Color.Blue,
+				{"{F40CDA3D5A7B1CDF}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_LightFireTeam.et"},
+				{"{F40CDA3D5A7B1CDF}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_LightFireTeam.et"},
+				true
+			);
+			
 			locationHandler = new TKY_LocationHandler();
 			firstRun = false;
+			locationHandler.Run();
 		}
-		locationHandler.Run();
 	}
 }

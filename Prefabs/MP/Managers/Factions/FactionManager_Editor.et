@@ -1,0 +1,25 @@
+SCR_FactionManager : "{A242612865F2A48E}Prefabs/MP/Managers/Factions/FactionManager_Base.et" {
+ ID "56B2B4776E6E4499"
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{56DEAC40D132400B}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{5978B9CE6585BBE8}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{5CC8DE37E1FF0F7A}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{623962205CE2B89C}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{626EC1F50F10DCC0}" : "{874C3ECA958F7A8F}Configs/Factions/ANTISTASI_PLAYER.conf" {
+  }
+ }
+}

@@ -1,0 +1,17 @@
+MetaFileClass {
+ Name "{111B1BD74C77A0CF}Configs/EntityCatalog/FIA/Characters_EntityCatalog_ANTISTASI_PLAYER.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+ }
+}

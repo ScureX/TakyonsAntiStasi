@@ -1,0 +1,42 @@
+GenericEntity : "{0F2AD45CBFB26047}Prefabs/Props/Military/Compositions/FIA/VehicleService_FIA_Small.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_CatalogEntitySpawnerComponent "{5D22B968F23A847A}" {
+   m_aAllowedLabels {
+    50 54
+   }
+  }
+  SCR_EditableEntityComponent "{5EF0C528F1242167}" : "{996046FE206C699A}Prefabs/Editor/Components/Default_SCR_EditableEntityComponent.ct" {
+   m_EntityType SYSTEM
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-EditableEntity_VehicleService_01_FIA_Name"
+    m_Image "{3CFF04AFD3781C0F}UI/Textures/EditorPreviews/Auto/Props/Military/Compositions/FIA/E_VehicleService_FIA_Small.edds"
+    m_sFaction "ANTISTASI_PLAYER"
+    m_aAuthoredLabels {
+     7
+    }
+    m_aAutoLabels {
+     696969001
+    }
+   }
+  }
+  SCR_FactionAffiliationComponent "{5D22B92ED0ABBFD4}" {
+   "faction affiliation" "ANTISTASI_PLAYER"
+  }
+  SCR_PreviewEntityComponent "{5EF0C528F124B7EB}" : "{6CADA7A88A6265FD}Prefabs/Editor/Components/PreviewEntityComponentClass.ct" {
+   m_bRuntime 0
+   m_aEntries {
+    SCR_BasePreviewEntry "{6270BBCAD92915CA}" {
+     m_iParentID -1
+     m_Mesh "{379B8DE5FCD1D4AE}Assets/Props/Military/InteractionPoints/VehicleService/VehicleService_Barrels_FIA_01.xob"
+     m_Flags EDITABLE
+     m_Shape MESH
+     m_iPivotID ""
+     m_vScale 1 1 1
+     m_vPosition 0 0 0
+     m_vAngles 0 0 0
+    }
+   }
+  }
+ }
+}

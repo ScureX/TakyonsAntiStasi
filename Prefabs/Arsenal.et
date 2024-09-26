@@ -1,0 +1,60 @@
+GenericEntity {
+ ID "6270BBC0577D64F7"
+ components {
+  MeshObject "{6270BBFC3A115621}" {
+   Object "{F8E18D6E4B1F120C}Assets/Props/Military/AmmoBox/ArsenalBox_01/ArsenalBox_01_FIA_general.xob"
+  }
+  RigidBody "{6270BBFF0083869C}" {
+  }
+  SCR_EditableEntityComponent "{6270BBFF14FBADCB}" {
+  }
+  SCR_FactionAffiliationComponent "{6270BBFDB3C2AF67}" {
+   "faction affiliation" "ANTISTASI_PLAYER"
+  }
+  UniversalInventoryStorageComponent "{6270BBFC2DEBD0FD}" {
+   Attributes SCR_ItemAttributeCollection "{6270BBC283C63797}" {
+    ItemDisplayName SCR_InventoryUIInfo "{6270BBC28A0D98B0}" {
+     Name "itemdisplayname"
+    }
+    ItemPhysAttributes ItemPhysicalAttributes "{6270BBC29F168448}" {
+     Weight 5
+     DimensionScaler 0.9
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{6270BBC2EF791043}" {
+     }
+    }
+    m_Size SLOT_3x3
+    m_SlotType SLOT_LOADOUT_STORAGE
+    m_bDraggable 0
+   }
+   Priority 1000
+  }
+  ActionsManagerComponent "{6270BBFF423CDC0B}" {
+   ActionContexts {
+    UserActionContext "{6270BBC08698727A}" {
+     ContextName "default"
+     Position PointInfo "{6270BBC08A839BFF}" {
+      Offset 0 0.5 0
+     }
+     Radius 1.5
+    }
+   }
+   additionalActions {
+    SCR_OpenStorageAction "{6270BBC0ED5E711B}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{6270BBC0C91BEA3B}" {
+      Name "#AR-Inventory_OpenArsenalStorage"
+     }
+    }
+   }
+  }
+  RplComponent "{6270BBFC32E44414}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{6270BBFC3DB1226C}" {
+  }
+ }
+}

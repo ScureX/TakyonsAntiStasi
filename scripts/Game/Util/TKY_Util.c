@@ -1,5 +1,26 @@
 class TKY_Util
 {
+	static bool IsAPlayerInsidaRadius(IEntity iEntity, int radius)
+	{
+		private ref array<IEntity> nearbyCharacters = new array<IEntity>();
+		private array<int> players = new array<int>(); 
+		GetGame().GetPlayerManager().GetPlayers(players);
+		
+		foreach (int playerid : players)
+		{
+			IEntity player = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerid);
+			
+			if (!player)
+				continue;
+
+			if (vector.DistanceSqXZ(player.GetOrigin(), iEntity.GetOrigin()) <= (radius * radius))
+				return true;
+		}
+		
+		return false;
+	}
+	
+	
 	static vector GetRandomPositionWithinRadius(vector center, float radius)
 	{
 	    // Generate random offsets within the radius

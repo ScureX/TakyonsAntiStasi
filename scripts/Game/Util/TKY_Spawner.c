@@ -1,10 +1,4 @@
-enum TKY_AntiStasiFactionEnum {
-	RHS_AFRF = 0,
-	RHS_USAF = 1,
-	INDFOR = 2
-}
-
-class TKY_AntiStasiFaction
+/*class TKY_AntiStasiFaction
 {
 	static Color GetColorForFaction(TKY_AntiStasiFactionEnum faction)
 	{
@@ -54,7 +48,7 @@ class TKY_AntiStasiFaction
 		}
 		return {};
 	}
-}
+}*/
 
 class TKY_Spawner
 {
@@ -72,7 +66,7 @@ class TKY_Spawner
 	}*/
 	
 	
-	SCR_AIGroup SpawnPrefabAtLocation(string prefab, vector location)
+	static SCR_AIGroup SpawnPrefabAtLocation(string prefab, vector location)
 	{
 	    World world = GetGame().GetWorld();
 	    if (!world)
@@ -99,7 +93,7 @@ class TKY_Spawner
 	    return newEntity;
 	}
 	
-	SCR_AIGroup SpawnPrefabWithinRadius(string prefab, vector origin, int radius, int minDistance = 0)
+	static SCR_AIGroup SpawnPrefabWithinRadius(string prefab, vector origin, int radius, int minDistance = 0)
 	{
 	    World world = GetGame().GetWorld();
 	    if (!world)
@@ -116,7 +110,7 @@ class TKY_Spawner
 	    params.Transform[3] = randomPosition; // Set the position to spawn the prefab
 	    
 	    // Spawn the prefab at the random location
-	    SCR_AIGroup newEntity = SCR_AIGroup.Cast(CreatePrefab(prefab, world, params));
+	    SCR_AIGroup newEntity = SCR_AIGroup.Cast(TKY_Spawner.CreatePrefab(prefab, world, params));
 	    
 	    // Check if the prefab was spawned successfully
 	    if (!newEntity)
@@ -128,7 +122,7 @@ class TKY_Spawner
 	    return newEntity;
 	}
 	
-	protected IEntity CreatePrefab(ResourceName prefab, BaseWorld myWorld, EntitySpawnParams params)
+	protected static IEntity CreatePrefab(ResourceName prefab, BaseWorld myWorld, EntitySpawnParams params)
 	{
 		Resource res = Resource.Load(prefab);
 		return GetGame().SpawnEntityPrefab(res, myWorld, params);

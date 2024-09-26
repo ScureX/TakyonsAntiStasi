@@ -1,0 +1,51 @@
+SCR_ChimeraCharacter : "{DE3786C0C6C978D4}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_BaseLoadout.et" {
+ ID "520EC961A090B1EE"
+ components {
+  FactionAffiliationComponent "{555C98D1CD949F3E}" {
+   "faction affiliation" "ANTISTASI_PLAYER"
+  }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Random_FIA_Soldier_Name"
+    Icon "{C431FD61793AA13F}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Random.edds"
+    m_Image "{0F590A8AC7FA6047}UI/Textures/EditorPreviews/Characters/INDFOR/FIA/Character_FIA_Randomized.edds"
+    m_aAuthoredLabels {
+     290 70 2 12
+    }
+   }
+   m_VariantData SCR_EditableEntityVariantData "{626D2A56ADA94D95}" {
+    m_bRandomizeDefaultVariant 0
+    m_aVariants {
+     SCR_EditableEntityVariant "{626D2A56ADA94D9F}" {
+      m_sVariantPrefab "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et"
+      m_iRandomizerWeight 14
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C64}" {
+      m_sVariantPrefab "{45A02CA25CBA9443}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Medic.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C67}" {
+      m_sVariantPrefab "{BF1E43FF39AA526B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Scout.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C6C}" {
+      m_sVariantPrefab "{58E47E5A4D599432}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_MG.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C69}" {
+      m_sVariantPrefab "{CE33AB22F61F3365}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Sharpshooter.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C6B}" {
+      m_sVariantPrefab "{23D81C023DBF85AC}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_RTO.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C75}" {
+      m_sVariantPrefab "{75FC25863194612A}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_AMG.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C76}" {
+      m_sVariantPrefab "{FF43925D26526B95}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_AAT.et"
+     }
+     SCR_EditableEntityVariant "{626D2A56ADA94C71}" {
+      m_sVariantPrefab "{D25BC9815A9F9E8D}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_AT.et"
+     }
+    }
+   }
+  }
+ }
+}

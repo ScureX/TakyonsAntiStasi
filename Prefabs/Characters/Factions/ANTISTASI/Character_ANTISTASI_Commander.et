@@ -28,6 +28,20 @@ SCR_ChimeraCharacter : "{76EC8248377D0989}Prefabs/Characters/Factions/CIV/Busine
     }
    }
   }
+  ActionsManagerComponent "{520EA1D2F659CE02}" {
+   additionalActions {
+    TKY_CommanderRelocate "{62B4D3BDC517C9C1}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{62B4D3BDCC29D976}" {
+      Name "Relocate 1"
+      Description "Moves Commander to nearest vehicle"
+     }
+     Duration 3
+    }
+   }
+  }
  }
  m_bRecruitable 0
  {

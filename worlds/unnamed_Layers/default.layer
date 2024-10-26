@@ -1,58 +1,6 @@
-$grp GenericEntity : "{01803CAE277E461A}PrefabsEditable/Auto/Props/Military/Compositions/FIA/E_VehicleService_FIA.et" {
- {
-  components {
-   SCR_EditableEntityComponent "{5EF0C528F1208821}" {
-    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
-     m_aAuthoredLabels {
-     }
-     m_aAutoLabels {
-      12 108 1 122
-     }
-    }
-   }
-  }
-  coords 3370.057 40.346 2592.919
- }
- {
-  components {
-   SCR_EditableEntityComponent "{5EF0C528F1208821}" {
-    m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
-     m_sFaction "ANTISTASI_PLAYER"
-     m_aAutoLabels {
-      696969001 122
-     }
-    }
-   }
-  }
-  coords 3368.148 40.203 2592.247
- }
+Vehicle UAZ1 : "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et" {
+ coords 3347.241 38.834 2576.922
 }
-SCR_SpawnPoint : "{3EE03ACC7A073A10}Prefabs/MP/Spawning/SpawnPoint_ANTISTASI_PLAYER.et" {
- coords 3273.591 27.056 2689.497
-}
-GenericEntity : "{45C79F88BCABDCBE}PrefabsEditable/Auto/Props/Military/Compositions/FIA/E_VehicleService_ANTISTASI.et" {
- components {
-  SCR_CatalogEntitySpawnerComponent "{5D22B968F23A847A}" {
-   m_bEnableGracePeriod 0
-  }
- }
- coords 3274.263 27.388 2684.766
-}
-GenericEntity : "{4E1DFB032E3F2996}Prefabs/Props/AntiStasi/AntiStasi_BuildingService.et" {
- components {
-  SCR_CampaignBuildingProviderComponent "{5EBCED04D0321687}" {
-   m_aAvailableTraits +{
-   }
-  }
- }
- coords 3272.887 27.724 2684.627
-}
-SCR_AIGroup : "{7DDFCDAD7FBEC8F0}Prefabs/Groups/INDFOR/Group_ANTISTASI_PLAYER.et" {
- coords 3263.427 20.628 2720.957
-}
-SCR_ChimeraCharacter : "{B869142F6DE0F145}Prefabs/Characters/Factions/ANTISTASI/Character_ANTISTASI_Commander.et" {
- coords 3371.637 40.42 2597.455
-}
-GenericEntity : "{F3208517509E0B9C}PrefabsEditable/Auto/Compositions/Misc/FreeRoamBuilding/E_Arsenal.et" {
- coords 3270.346 26.946 2685.328
+SCR_AIGroup : "{6CFAB2BE1FE04E70}Prefabs/Groups/ANTISTASI_PLAYER/Group_ANTISTASI_Commander.et" {
+ coords 3347.873 38.918 2581.032
 }

@@ -1,9 +1,15 @@
-GenericEntity : "{FD426896698B4615}Prefabs/Compositions/Misc/FreeRoamBuilding/Dragonsteeth_S_US_01.et" {
- ID "5282DCB5DFC8538F"
+GenericEntity {
+ ID "62B4D158E463C51A"
  components {
-  SCR_EditableEntityComponent "{5E989985724CC0DD}" : "{8B8F72167C615EAA}Prefabs/Editor/Components/Compositions_SCR_EditableEntityComponent.ct" {
-   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+  MeshObject "{62B4D158E463C5D6}" {
+   Object "{F8E18D6E4B1F120C}Assets/Props/Military/AmmoBox/ArsenalBox_01/ArsenalBox_01_FIA_general.xob"
+  }
+  RigidBody "{62B4D158E463C5E4}" {
+  }
+  SCR_EditableEntityComponent "{62B4D158E463C5EE}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{62B4D158C071ECAF}" {
     Name "Arsenal"
+    Icon "{077BEF7A3C7930CF}UI/Textures/Editor/EditableEntities/Compositions/EditableEntity_Composition.edds"
     m_Image "{0BDEBF1256DEB576}UI/Textures/EditorPreviews/Auto/Props/Military/Compositions/FIA/E_ArsenalBox_FIA.edds"
     m_sFaction "ANTISTASI_PLAYER"
     m_aAuthoredLabels {
@@ -19,72 +25,87 @@ GenericEntity : "{FD426896698B4615}Prefabs/Compositions/Misc/FreeRoamBuilding/Dr
     }
     m_EntityChildrenBudgetCost {
      SCR_EntityBudgetValue "{626D2A47618EA691}" {
-      m_BudgetType PROPS
       m_Value 1
      }
     }
    }
+   m_vIconPos 0 0 0
+   m_Flags 259
   }
-  SCR_EditorLinkComponent "{626D2A47618EA6A4}" {
-   m_aEntries {
-    SCR_EditorLinkEntry "{626D2A47618EA6A3}" {
-     m_Prefab "{4C1C0B5C45EA0246}Prefabs/Arsenal.et"
-     m_vPosition 0 0 0
-     m_vAngles 0 0 0
-     m_fScale 1
+  SCR_FactionAffiliationComponent "{62B4D158E463C5EC}" {
+   "faction affiliation" "ANTISTASI_PLAYER"
+  }
+  UniversalInventoryStorageComponent "{62B4D158E463C5EB}" {
+   Attributes SCR_ItemAttributeCollection "{62B4D158E463C5F4}" {
+    ItemDisplayName SCR_InventoryUIInfo "{62B4D158E463C5F0}" {
+     Name "#AR-Arsenal_Name"
+     Description "#AR-Arsenal_Description"
+     m_aItemHints {
+      SCR_SupplyAvailableItemHintUIInfo "{62B4D158E463C5FA}" {
+       Name "#AR-Item_SupplyConsumer_Hint1"
+       Icon "{8EB808BFA227C080}UI/Textures/Icons/InventoryHints/InventoryHint_SuppliesStored.edds"
+       m_cColor 1 1 1 1
+       m_bHideInArsenal 1
+      }
+     }
     }
+    ItemPhysAttributes ItemPhysicalAttributes "{62B4D158E463C580}" {
+     Weight 5
+     ItemDimensions 10 10 10
+     ItemVolume 100
+     DimensionScaler 0.9
+     RestingAdditiveRotationLS 0 0 0
+     RestingAdditiveOffsetLS 0 0 0
+    }
+    CustomAttributes {
+     PreviewRenderAttributes "{62B4D158E463C58C}" {
+      CameraOrbitAngles 330 30 0
+      CameraDistanceToItem 2
+      FOV 60
+      AspectRatio 1
+     }
+    }
+    m_Size SLOT_2x2
+    m_SlotType SLOT_LOADOUT_STORAGE
+    m_bDraggable 0
    }
   }
-  ActionsManagerComponent "{5D66ED1096104FD8}" {
+  TKY_InventoryStorageManagerComponent "{62B4D158E463C589}" {
+  }
+  ActionsManagerComponent "{62B4D158E463C597}" {
+   ActionContexts {
+    UserActionContext "{62B4D158E463C592}" {
+     ContextName "default"
+     Position PointInfo "{62B4D158E463C5A6}" {
+      Offset 0 0.5 0
+     }
+     Radius 1.5
+    }
+   }
    additionalActions {
-    SCR_CampaignBuildingDisassemblyUserAction "{5D66ED1086234C38}" {
+    SCR_OpenStorageAction "{62B4D158E463C5A2}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{62B4D158E463C5A3}" {
+      Name "#AR-Inventory_OpenArsenalStorage"
+     }
+    }
+    SCR_CampaignBuildingDisassemblyUserAction "{62B4D3B561D8D31A}" {
+     ParentContextList {
+      "default"
+     }
+     UIInfo UIInfo "{5D66ED10FA2A86F5}" {
+      Name "Disassemble"
+     }
      Duration 5
     }
    }
   }
- }
- {
-  GenericEntity {
-   ID "6270BBFCD87C7919"
-   components {
-    MeshObject "{6270BBFC3A115621}" {
-     Object "{F8E18D6E4B1F120C}Assets/Props/Military/AmmoBox/ArsenalBox_01/ArsenalBox_01_FIA_general.xob"
-    }
-    RigidBody "{6270BBFF0083869C}" {
-    }
-    SCR_EditableEntityComponent "{6270BBFF14FBADCB}" {
-    }
-    SCR_FactionAffiliationComponent "{6270BBFDB3C2AF67}" {
-     "faction affiliation" "ANTISTASI_PLAYER"
-    }
-    UniversalInventoryStorageComponent "{6270BBFC2DEBD0FD}" {
-    }
-    ActionsManagerComponent "{6270BBFF423CDC0B}" {
-     ActionContexts {
-      UserActionContext "{6270BBC08698727A}" {
-       ContextName "default"
-       Position PointInfo "{6270BBC08A839BFF}" {
-        Offset 0 0.5 0
-       }
-       Radius 1.5
-      }
-     }
-     additionalActions {
-      SCR_OpenStorageAction "{6270BBC0ED5E711B}" {
-       ParentContextList {
-        "default"
-       }
-       UIInfo UIInfo "{6270BBC0C91BEA3B}" {
-        Name "#AR-Inventory_OpenArsenalStorage"
-       }
-      }
-     }
-    }
-    RplComponent "{6270BBFC32E44414}" {
-    }
-    Hierarchy "{6270BBFC3DB1226C}" {
-    }
-   }
+  RplComponent "{62B4D158E463C5AE}" {
+   "Rpl State Override" Runtime
+  }
+  Hierarchy "{62B4D158E463C5AF}" {
   }
  }
 }

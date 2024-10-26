@@ -122,5 +122,81 @@ class TKY_SpawnConstructionCommand : ScrServerCommand
 
 class TKY_CommanderRelocate : ScriptedUserAction
 {
+	private ref array<IEntity> availableVehicles = new array<IEntity>;
 	
+	bool CheckVehicleAddToArray(IEntity entity) {
+		Print(entity);
+	    if (entity && entity.FindComponent(BaseVehicleNodeComponent)) {
+	        availableVehicles.Insert(entity);
+	        return true;
+	    }
+	    return false;
+	}
+	
+	protected bool FilterVehicles(IEntity entity) 
+	{	
+		if (Vehicle.Cast(entity))
+		{
+			return true;
+		}
+		return false;
+	}
+	
+	override void PerformAction(IEntity pOwnerEntity, IEntity pUserEntity)
+	{
+		GetGame().GetWorld().QueryEntitiesBySphere(
+	        pOwnerEntity.GetOrigin(),
+	        10.0,
+	        CheckVehicleAddToArray,
+	        FilterVehicles,
+	        EQueryEntitiesFlags.DYNAMIC
+    	);
+		
+		if (availableVehicles.Count() < 1)
+		{
+			// ERROR
+			Print("not enough vics");
+			return;
+		}
+		
+		// put into first vic THAT HAS SPACE on 2nd place or so
+		
+		foreach (IEntity e : availableVehicles)
+		{
+			Vehicle vic = Vehicle.Cast(e);
+			SCR_BaseCompartmentManagerComponent compartmentMgr = SCR_BaseCompartmentManagerComponent.Cast(vic.FindComponent(SCR_BaseCompartmentManagerComponent));
+			
+			if (!compartmentMgr) {
+		        Print("Vehicle does not have a CompartmentAccessComponent.");
+		        continue;
+		    }
+			
+			BaseCompartmentSlot slot = compartmentMgr.GetFirstFreeCompartmentOfType(ECompartmentType.CARGO);
+			
+			if (!slot)
+			{
+		        Print("Vehicle does not have enough slots");
+		        continue;
+			}
+			
+			CompartmentAccessComponent compartmentAccess = CompartmentAccessComponent.Cast(pOwnerEntity.FindComponent(CompartmentAccessComponent));
+			ChimeraWorld world = GetGame().GetWorld();
+			bool getInVic = compartmentAccess.GetInVehicle(vic, slot, true, -1, ECloseDoorAfterActions.INVALID, world.IsGameTimePaused());
+			
+			if (!getInVic)
+			{
+				Print("couldnt get in vic");
+				continue;
+			}
+			return;
+		}
+		
+		// some other error for none of the vics being suited
+		Print("none of the vics are suited")
+	}
+}
+
+class TKY_CommanderExitVic : ScriptedUserAction
+{
+
 }

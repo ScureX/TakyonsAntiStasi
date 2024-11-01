@@ -5,7 +5,7 @@ Vehicle {
    additionalActions {
     TKY_VehicleLoad "{62BEFBE8898F185F}" {
      ParentContextList {
-      "door_rear"
+      "door_rear" "door_r01" "door_l01" "cargo"
      }
      UIInfo UIInfo "{62BEFBE89D6B1A32}" {
       Name "Load Items to Vehicle"
@@ -13,7 +13,7 @@ Vehicle {
     }
     TKY_VehicleUnload "{62BEFBE8978F93F1}" {
      ParentContextList {
-      "door_rear"
+      "door_rear" "door_r01" "door_l01" "cargo"
      }
      UIInfo UIInfo "{62BEFBE8E67D8926}" {
       Name "Unload Items to Arsenal"

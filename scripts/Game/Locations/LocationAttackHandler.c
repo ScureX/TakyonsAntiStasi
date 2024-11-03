@@ -98,9 +98,9 @@ class TKY_LocationAttackHandler
 		// void TKY_QRFHandler(TKY_Location _location, int _ANNOUNCEMENT_DELAY = 300, int _QR_FORCE_DURATION = 900, int _NO_PLAYER_DURATION = 300)
 		qrfHandler = new TKY_QRFHandler(
 			location,
-			0, // start immediatly
-			15,
-			5
+			0//, // start immediatly
+			//15,
+			//5
 		);
 		
 	}

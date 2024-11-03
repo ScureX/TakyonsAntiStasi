@@ -85,15 +85,27 @@ class TKY_Location
 	protected void PlayerNearTrigger()
 	{
 		// TODO spawn civvies // keep amount topped up
-		for (int i = civvies.Count(); i < LOCATION_RADIUS / 5; i++)
+		for (int i = civvies.Count(); i < LOCATION_RADIUS / 10; i++)
 		{
-			civvies.Insert(
-				TKY_Spawner.SpawnPrefabWithinRadius(
-					"{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et",
-					locationEntity.GetOrigin(),
-					LOCATION_RADIUS
+			SCR_AIGroup civ = TKY_Spawner.SpawnPrefabWithinRadius(
+				"{464DE4EEF0F155CE}Prefabs/Groups/CIV/Group_Civ.et",
+				locationEntity.GetOrigin(),
+				LOCATION_RADIUS
+			);
+			
+			SCR_DefendWaypoint newWP = SCR_DefendWaypoint.Cast(
+				TKY_Spawner.CreatePrefab(
+					"{D9C14ECEC9772CC6}PrefabsEditable/Auto/AI/Waypoints/E_AIWaypoint_Defend.et", 
+					GetGame().GetWorld(), 
+					TKY_Spawner.GetEntitySpawnParams(locationEntity)
 				)
 			);
+		
+			newWP.SetOrigin(locationEntity.GetOrigin());
+			newWP.SetCompletionRadius(LOCATION_RADIUS * 2);
+			civ.AddWaypoint(newWP);
+			
+			civvies.Insert(civ);
 		}
 		
 		// if its a non player city we assume attack
@@ -183,6 +195,8 @@ class TKY_Location
 		
 		foreach (SCR_AIGroup g : civvies)
 			delete g;
+		
+		civvies.Clear();
 	}
 	
 	

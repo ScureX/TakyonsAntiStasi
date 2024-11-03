@@ -122,9 +122,18 @@ class TKY_Spawner
 	    return newEntity;
 	}
 	
-	protected static IEntity CreatePrefab(ResourceName prefab, BaseWorld myWorld, EntitySpawnParams params)
+	static IEntity CreatePrefab(ResourceName prefab, BaseWorld myWorld, EntitySpawnParams params)
 	{
 		Resource res = Resource.Load(prefab);
 		return GetGame().SpawnEntityPrefab(res, myWorld, params);
+	}
+	
+	static EntitySpawnParams GetEntitySpawnParams(IEntity entity)
+	{
+		EntitySpawnParams params();
+		vector mat[4];
+		entity.GetWorldTransform(mat);
+		params.Transform = mat;
+		return params;
 	}
 }

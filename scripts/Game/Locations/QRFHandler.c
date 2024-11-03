@@ -84,9 +84,22 @@ class TKY_QRFHandler
         SCR_AIGroup defender = TKY_Spawner.SpawnPrefabWithinRadius(
 			prefabs[Math.RandomInt(0, prefabs.Count())],
             location.locationEntity.GetOrigin(), 
-            location.LOCATION_RADIUS
+            location.LOCATION_RADIUS * 3,
+			location.LOCATION_RADIUS * 1.25
         );
 
+		SCR_DefendWaypoint newWP = SCR_DefendWaypoint.Cast(
+			TKY_Spawner.CreatePrefab(
+				"{D9C14ECEC9772CC6}PrefabsEditable/Auto/AI/Waypoints/E_AIWaypoint_Defend.et", 
+				GetGame().GetWorld(), 
+				TKY_Spawner.GetEntitySpawnParams(location.locationEntity)
+			)
+		);
+	
+		newWP.SetOrigin(location.locationEntity.GetOrigin());
+		newWP.SetCompletionRadius(location.LOCATION_RADIUS * 2);
+		defender.AddWaypoint(newWP);
+		
         if (defender)
             qrfForce.Insert(defender);
 	}

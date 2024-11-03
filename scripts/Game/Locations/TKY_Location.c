@@ -28,7 +28,7 @@ class TKY_Location
 	ref array<SCR_AIGroup> civvies = {};
 	
 	const int PLAYER_MIN_DISTANCE_TO_SPAWN = 1000;
-	const int LOCATION_RADIUS = 100; // radius thats actually the location (spawn enemies, capture) // TODO scale with obj size
+	const int LOCATION_RADIUS = 50; // radius thats actually the location (spawn enemies, capture) // TODO scale with obj size
 	int reputation = 0;
 	
 	//bool isPlayerInSpawnDistance = false;
@@ -85,6 +85,16 @@ class TKY_Location
 	protected void PlayerNearTrigger()
 	{
 		// TODO spawn civvies // keep amount topped up
+		for (int i = civvies.Count(); i < LOCATION_RADIUS / 5; i++)
+		{
+			civvies.Insert(
+				TKY_Spawner.SpawnPrefabWithinRadius(
+					"{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et",
+					locationEntity.GetOrigin(),
+					LOCATION_RADIUS
+				)
+			);
+		}
 		
 		// if its a non player city we assume attack
 		if (this.faction != TKY_AntiStasiManagerComponent.playerFaction && attackHandler == null)
@@ -148,9 +158,11 @@ class TKY_Location
 		{
 			MapItem m_MapItem = descr.Item();
 			MapDescriptorProps props = m_MapItem.GetProps();
-			props.SetTextColor(this.faction.color);
+ 			props.SetTextColor(this.faction.color);
 			props.SetOutlineColor(Color.Black);
-			float scaledValue = ((LOCATION_RADIUS - 50) / (150 - 50)) * (45 - 25) + 25;
+			props.SetFont("{3E7733BAC8C831F6}UI/Fonts/RobotoCondensed/RobotoCondensed_Regular.fnt");
+			//float scaledValue = ((LOCATION_RADIUS - 50) / (150 - 50)) * (45 - 25) + 25;
+			float scaledValue = 20;
 			int val = Math.Round(scaledValue);
 			props.SetTextSize(val, val, val);
 			props.SetVisible(true);
@@ -168,6 +180,9 @@ class TKY_Location
 		}
 		
 		GetGame().GetCallqueue().Remove(this.AttackHandlerLifeCycle);
+		
+		foreach (SCR_AIGroup g : civvies)
+			delete g;
 	}
 	
 	

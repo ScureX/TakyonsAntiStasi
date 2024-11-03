@@ -69,6 +69,18 @@ class TKY_LocationAttackHandler
 	        if (defender)
 	        {
 	            //Print("Group " + i + " spawned successfully.");
+				SCR_DefendWaypoint newWP = SCR_DefendWaypoint.Cast(
+					TKY_Spawner.CreatePrefab(
+						"{D9C14ECEC9772CC6}PrefabsEditable/Auto/AI/Waypoints/E_AIWaypoint_Defend.et", 
+						GetGame().GetWorld(), 
+						TKY_Spawner.GetEntitySpawnParams(location.locationEntity)
+					)
+				);
+ 		
+				newWP.SetOrigin(location.locationEntity.GetOrigin());
+				newWP.SetCompletionRadius(location.LOCATION_RADIUS * 2);
+				defender.AddWaypoint(newWP);
+				
 	            defendingForce.Insert(defender);
 	        }
 	        else
